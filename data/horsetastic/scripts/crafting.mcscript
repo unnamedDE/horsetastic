@@ -1,0 +1,34 @@
+#file: ./crafting/main
+
+/function horsetastic:crafting/saddle
+/function horsetastic:crafting/skeleton
+/function horsetastic:crafting/whip/basic
+/function horsetastic:crafting/whip/blinky
+#
+asat('@e[type=minecraft:item_frame,nbt={Rotation: [0.0f, -90.0f], Item: {id: "minecraft:saddle", Count: 1b}}]'), if('entity @e[distance=..1,type=horse,tag=smash_anvil]') {
+  /function horsetastic:crafting/basic
+}
+
+
+#file: ./crafting/whip/basic
+
+/execute at @e[type=armor_stand,tag=aclib_craftingtable] if block ~ ~ ~ minecraft:dropper{Items:[{Slot: 2b, id: "minecraft:stick", Count: 1b}, {Slot: 4b, id: "minecraft:stick", Count: 1b}, {Slot: 5b, id: "minecraft:leather", Count: 1b}, {Slot: 6b, id: "minecraft:stick", Count: 1b}, {Slot: 8b, id: "minecraft:leather", Count: 1b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:0b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:1b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:3b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:7b}]} run data merge block ~ ~ ~ {Items:[{Slot:4b,id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:703001,display:{Lore:["{\"text\":\"Use to boost nearby horses\",\"color\":\"dark_green\",\"italic\":\"false\"}"],Name:"{\"text\":\"Whip\",\"color\":\"yellow\",\"italic\":\"false\"}"}}}]}
+
+#file: ./crafting/whip/blinky
+
+/execute at @e[type=armor_stand,tag=aclib_craftingtable] if block ~ ~ ~ minecraft:dropper{Items:[{Slot: 0b, id: "minecraft:carrot_on_a_stick", Count: 1b, tag: {CustomModelData: 703001, display: {Lore: ["{\"text\":\"Use to boost nearby horses\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Whip\",\"color\":\"yellow\",\"italic\":\"false\"}"}}}, {Slot: 1b, id: "minecraft:saddle", Count: 1b, tag: {HideFlags: 1, display: {Lore: ["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:2b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:3b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:4b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:5b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:6b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:7b}]} unless block ~ ~ ~ minecraft:dropper{Items:[{Slot:8b}]} run data merge block ~ ~ ~ {Items:[{Slot:0b,id:"minecraft:carrot_on_a_stick",Count:1b,tag:{CustomModelData:703002,display:{Name:"{\"text\":\"Whip\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Use to teleport to Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}, {Slot: 1b, id: "minecraft:saddle", Count: 1b, tag: {HideFlags: 1, display: {Lore: ["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}]}
+
+#file: ./crafting/saddle
+
+as('@e[tag=smash_piston,type=item,nbt={Item:{id:"minecraft:leather",Count:5b}}]') {
+  /data merge entity @s {Item:{id:"minecraft:saddle",Count:1b}}
+}
+
+#file: ./crafting/basic
+/tp @e[type=horse,limit=1,sort=nearest] ~ -500 ~
+/data merge entity @s {Item:{id:"minecraft:saddle",Count:1b,tag:{CustomModelData:703101,display:{Name:"{\"text\":\"Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop it on the ground to summon a horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}
+#log("finished")
+
+#file: ./crafting/skeleton
+
+/execute as @e[type=minecraft:armor_stand,tag=aclib_craftingtable] at @s if block ~ ~ ~ minecraft:dropper{Items: [{Slot: 0b, id: "minecraft:bone", Count: 1b}, {Slot: 1b, id: "minecraft:emerald", Count: 1b, tag: {HideFlags: 1, display: {Lore: ["{\"text\":\"Drops from zombies and skeletons\",\"color\":\"dark_green\",\"italic\":\"false\"}", "{\"text\":\"Used to create skeleton horse in a saddle\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Gem of the Undead\",\"color\":\"yellow\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}, {Slot: 2b, id: "minecraft:bone", Count: 1b}, {Slot: 3b, id: "minecraft:bone", Count: 1b}, {Slot: 4b, id: "minecraft:saddle", Count: 1b, tag: {HideFlags: 1, display: {Lore: ["{\"text\":\"Drop it on the ground to summon a horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}, {Slot: 5b, id: "minecraft:bone", Count: 1b}, {Slot: 6b, id: "minecraft:bone", Count: 1b}, {Slot: 7b, id: "minecraft:emerald", Count: 1b, tag: {HideFlags: 1, display: {Lore: ["{\"text\":\"Drops from zombies and skeletons\",\"color\":\"dark_green\",\"italic\":\"false\"}", "{\"text\":\"Used to create skeleton horse in a saddle\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Gem of the Undead\",\"color\":\"yellow\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}, {Slot: 8b, id: "minecraft:bone", Count: 1b}]} run data merge block ~ ~ ~ {Items: [{Slot: 4b, id: "minecraft:saddle", Count: 1b, tag: {CustomModelData:703102,HideFlags: 1, display: {Lore: ["{\"text\":\"Drop to summon a skeleton horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Skeleton Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}]}

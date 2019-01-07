@@ -1,0 +1,38 @@
+{
+    "display": {
+        "title": {
+            "text": "Blinky's whip",
+            "color": "dark_purple"
+        },
+        "description": {
+            "text": "Upgrade your whip to control Blinky in a different way",
+            "color": "green"
+        },
+        "icon": {
+            "item": "minecraft:fishing_rod",
+            "nbt": "{CustomModelData:703002,display:{Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Use to teleport to Blinky\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+        },
+        "frame": "challenge",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:fishing_rod",
+                        "nbt": "{CustomModelData:703002,display:{Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Use to teleport to Blinky\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}",
+                        "count": {
+                            "min": 1,
+                            "max": 100
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "parent": "horsetastic:basic_whip"
+}

@@ -1,0 +1,35 @@
+#file: ./whip/main
+
+/function horsetastic:whip/basic
+/function horsetastic:whip/blinky
+##
+/scoreboard players reset @a[scores={horse_whip_used=1..}] horse_whip_used
+
+#file: ./whip/basic
+
+asat(@a[scores={horse_whip_used=1..}]), if('entity @s[nbt={SelectedItem:{id: "minecraft:carrot_on_a_stick", Count: 1b, tag: {CustomModelData: 703001, display: {Lore:["{\\"text\\":\\"Use to boost nearby horses\\",\\"color\\":\\"dark_green\\",\\"italic\\":\\"false\\"}"],Name: "{\\"text\\":\\"Whip\\",\\"color\\":\\"yellow\\",\\"italic\\":\\"false\\"}"}}}}]') {
+  /effect give @e[type=horse,distance=..5] minecraft:speed 2 4 true
+  /playsound entity.generic.explode player @a ~ ~ ~ 1 1.75
+  at(@e[type=horse,limit=1,sort=nearest]), rotated('~ 0'), positioned('^ ^1.5 ^1'), if('entity @e[type=horse,distance=..5]') {
+    /particle minecraft:crit ~ ~ ~ 0 0 0 1 10
+  }
+}
+
+#file: ./whip/blinky
+
+asat('@a[scores={horse_whip_used=1..},nbt={SelectedItem:{id: "minecraft:carrot_on_a_stick", Count: 1b, tag: {CustomModelData: 703002, display: {Lore: ["{\\"text\\":\\"Use to teleport to Blinky\\",\\"color\\":\\"dark_green\\",\\"italic\\":\\"false\\"}"], Name: "{\\"text\\":\\"Whip\\",\\"color\\":\\"dark_purple\\",\\"italic\\":\\"false\\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]}}}]') {
+  if('entity @s[nbt={RootVehicle:{Entity:{id: "minecraft:skeleton_horse", CustomName: \"{\\"color\\":\\"dark_purple\\",\\"text\\":\\"Blinky\\"}"}}}]') {
+    asat(@e[type=skeleton_horse,limit=1,sort=nearest,distance=..2.5,tag=horsetastic_horse_blinky]) {
+      positioned('^ ^ ^10'), if('block ~ ~ ~ minecraft:air' && 'block ~ ~1 ~ minecraft:air' && 'block ~ ~2 ~ minecraft:air') {
+        /tp @s ^ ^ ^10
+      }
+    }
+  }  else {
+    at(@e[type=skeleton_horse,tag=horsetastic_horse_blinky,limit=1,sort=nearest]) {
+      if('block ~ ~ ~ minecraft:air' && 'block ~ ~1 ~ minecraft:air') {
+        /tp @s ~ ~ ~
+        /function horsetastic:visuals/tp
+      }
+    }
+  }
+}

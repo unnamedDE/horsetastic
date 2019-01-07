@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Whip"
+        },
+        "description": {
+            "text": "Craft a whip to boost your horses",
+            "color": "green"
+        },
+        "icon": {
+            "item": "minecraft:fishing_rod",
+            "nbt": "{CustomModelData:703001,display:{Lore:[\"{\\\"text\\\":\\\"Use to boost nearby horses\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"],Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\"}}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:fishing_rod",
+                        "nbt": "{CustomModelData:703001,display:{Lore:[\"{\\\"text\\\":\\\"Use to boost nearby horses\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"],Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\"}}",
+                        "count": {
+                            "min": 1,
+                            "max": 100
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "parent": "horsetastic:root"
+}

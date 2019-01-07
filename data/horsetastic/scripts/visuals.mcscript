@@ -1,0 +1,9 @@
+#file: ./visuals/summon
+
+/particle poof ~ ~ ~ 0 0 0 1 100 normal
+/playsound minecraft:entity.horse.armor neutral @a ~ ~ ~
+
+#file: ./visuals/tp
+
+/particle minecraft:portal ~ ~ ~ 0 0 0 10 500
+/playsound minecraft:entity.enderman.teleport player @s ~ ~ ~

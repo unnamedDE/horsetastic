@@ -1,0 +1,67 @@
+#file: ./noai/main
+
+##
+#horse
+asat('@e[type=horse,nbt={Tame:1b,Leashed:0b}]') {
+  if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]') {
+    if('entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}]') {
+      positioned('~ ~0.85 ~') {
+        if(!'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
+          /function horsetastic:noai/noai
+        }
+      }
+    }
+  } else {
+    if('entity @s[tag=horsetastic_noai]') {
+      /function horsetastic:noai/ai
+    }
+  }
+  if('entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
+    if('entity @s[tag=horsetastic_noai]') {
+      /function horsetastic:noai/ai
+    }
+  }
+}
+asat(@e[type=horse,tag=horsetastic_noai,nbt={OnGround:0b}]) {
+  if('block ~ ~-1 ~ minecraft:air') {
+    /function horsetastic:noai/ai
+  }
+}
+#
+#skeleton_horse
+asat('@e[type=skeleton_horse,nbt={Tame:1b,Leashed:0b}]') {
+  if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]') {
+    if('entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}]') {
+      positioned('~ ~0.85 ~') {
+        if(!'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
+          /function horsetastic:noai/noai
+        }
+      }
+    }
+  } else {
+    if('entity @s[tag=horsetastic_noai]') {
+      /function horsetastic:noai/ai
+    }
+  }
+  if('entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
+    if('entity @s[tag=horsetastic_noai]') {
+      /function horsetastic:noai/ai
+    }
+  }
+}
+asat(@e[type=skeleton_horse,tag=horsetastic_noai]) {
+  if('block ~ ~-1 ~ minecraft:air') {
+    /function horsetastic:noai/ai
+  }
+}
+
+#file: ./noai/ai
+
+/data merge entity @s[tag=horsetastic_noai] {NoAI:0b}
+/tag @s remove horsetastic_noai
+
+#file: ./noai/noai
+
+
+  /data merge entity @s[tag=!horsetastic_noai] {NoAI:1b}
+  /tag @s add horsetastic_noai

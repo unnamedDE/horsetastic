@@ -1,0 +1,37 @@
+{
+    "display": {
+        "title": {
+            "text": "Horse in a saddle"
+        },
+        "description": {
+            "text": "Craft a Horse in a saddle to pickup your horse and carry it in your inventory",
+            "color": "green"
+        },
+        "icon": {
+            "item": "minecraft:saddle",
+            "nbt": "{CustomModelData:703101,display:{Name:\"{\\\"text\\\":\\\"Horse in a saddle\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Drop it on the ground to summon a horse\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false
+    },
+    "criteria": {
+        "item": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:saddle",
+                        "nbt": "{CustomModelData:703101,display:{Name:\"{\\\"text\\\":\\\"Horse in a saddle\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Drop it on the ground to summon a horse\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}",
+                        "count": {
+                            "min": 1,
+                            "max": 100
+                        }
+                    }
+                ]
+            }
+        }
+    },
+    "parent": "horsetastic:root"
+}

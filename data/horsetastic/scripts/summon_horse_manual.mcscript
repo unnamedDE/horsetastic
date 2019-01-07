@@ -1,0 +1,11 @@
+#file: ./summon_horse_manual/basic
+
+/summon minecraft:horse ~ ~ ~ {Health:30f, Tame: 1b, Attributes: [{Base: 30.0d, Name: "generic.maxHealth"}, {Base: 0.2378785d, Name: "generic.movementSpeed"}, {Base: 0.7d, Name: "horse.jumpStrength"}], PersistenceRequired: 1b, Tags: ["horsetastic_horse_basic"], Variant: 513, DeathLootTable: "horsetastic:nothing", SaddleItem: {id: "minecraft:saddle", tag: {CustomModelData:703101,display:{Name:"{\"text\":\"Horse in a saddle's saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Remove to pick up the horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}, Count: 1b}}
+
+#file: ./summon_horse_manual/skeleton
+
+/summon skeleton_horse ~ ~1 ~ {DeathLootTable:"horsetastic:nothing",PersistenceRequired:1b,Health:40f,Tame:1b,SkeletonTrap:0b,Tags:["horsetastic_horse_skeleton"],Attributes:[{Name:generic.maxHealth,Base:40},{Name:generic.knockbackResistance,Base:1},{Name:generic.movementSpeed,Base:0.35},{Name:generic.armor,Base:5},{Name:horse.jumpStrength,Base:0.85}],SaddleItem:{id:"minecraft:saddle",Count:1b, tag: {CustomModelData:703102,display:{Name:"{\"text\":\"Skeleton Horse's saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Remove to pick up the skeleton horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}
+
+#file: ./summon_horse_manual/blinky
+
+/summon skeleton_horse ~ ~ ~ {Silent:1b,Invulnerable:1b,CustomNameVisible:1b,DeathLootTable:"horsetastic:nothing",PersistenceRequired:1b,Health:100f,Tame:1b,SkeletonTrap:0b,Tags:["horsetastic_horse_blinky"],CustomName:"{\"text\":\"Blinky\",\"color\":\"dark_purple\"}",Attributes:[{Name:generic.maxHealth,Base:100},{Name:generic.movementSpeed,Base:0.5},{Name:horse.jumpStrength,Base:1.5}],SaddleItem:{id:"minecraft:saddle",Count:1b, tag: {CustomModelData:703103,display:{Name:"{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Remove to pick up Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}

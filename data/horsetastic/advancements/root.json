@@ -1,0 +1,35 @@
+{
+    "display": {
+        "title": {
+            "text": "Horsetastic"
+        },
+        "description": {
+            "text": "The beginning of the datapack horsetastic",
+            "color": "green"
+        },
+        "icon": {
+            "item": "minecraft:saddle"
+        },
+        "frame": "task",
+        "show_toast": true,
+        "announce_to_chat": true,
+        "hidden": false,
+        "background": "minecraft:textures/block/hay_block_side.png"
+    },
+    "criteria": {
+        "saddle": {
+            "trigger": "minecraft:inventory_changed",
+            "conditions": {
+                "items": [
+                    {
+                        "item": "minecraft:saddle",
+                        "count": {
+                            "min": 1,
+                            "max": 100
+                        }
+                    }
+                ]
+            }
+        }
+    }
+}
