@@ -1,0 +1,7 @@
+#file: ./give/blinky_eye
+
+/give @s minecraft:ender_eye{display:{Name:"{\"text\":\"Eye of Blinky\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Used to craft Blinky's saddle\",\"color\":\"dark_green\",\"italic\":\"false\"}","{\"text\":\"Can also be used as an eye of ender\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]} 1
+
+#file: ./give/undead_gem
+
+/give @s minecraft:emerald{HideFlags: 1, display: {Lore: ["{\"text\":\"Drops from zombies and skeletons\",\"color\":\"dark_green\",\"italic\":\"false\"}", "{\"text\":\"Used to create skeleton horse in a saddle\",\"color\":\"dark_green\",\"italic\":\"false\"}"], Name: "{\"text\":\"Gem of the Undead\",\"color\":\"yellow\",\"italic\":\"false\"}"}, Enchantments: [{lvl: 1, id: "minecraft:unbreaking"}]} 1
