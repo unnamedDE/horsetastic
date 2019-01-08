@@ -6,6 +6,7 @@
 ######
 function horsetastic:crafting/saddle
 function horsetastic:crafting/skeleton
+function horsetastic:crafting/blinky
 function horsetastic:crafting/whip/basic
 function horsetastic:crafting/whip/blinky
 
