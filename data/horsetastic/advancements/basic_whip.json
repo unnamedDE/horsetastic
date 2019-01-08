@@ -8,7 +8,7 @@
             "color": "green"
         },
         "icon": {
-            "item": "minecraft:fishing_rod",
+            "item": "minecraft:carrot_on_a_stick",
             "nbt": "{CustomModelData:703001,display:{Lore:[\"{\\\"text\\\":\\\"Use to boost nearby horses\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"],Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\"}}"
         },
         "frame": "task",
@@ -22,7 +22,7 @@
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:fishing_rod",
+                        "item": "minecraft:carrot_on_a_stick",
                         "nbt": "{CustomModelData:703001,display:{Lore:[\"{\\\"text\\\":\\\"Use to boost nearby horses\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"],Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\"}}",
                         "count": {
                             "min": 1,

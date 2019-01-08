@@ -9,7 +9,7 @@
             "color": "green"
         },
         "icon": {
-            "item": "minecraft:fishing_rod",
+            "item": "minecraft:carrot_on_a_stick",
             "nbt": "{CustomModelData:703002,display:{Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Use to teleport to Blinky\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
         },
         "frame": "challenge",
@@ -23,7 +23,7 @@
             "conditions": {
                 "items": [
                     {
-                        "item": "minecraft:fishing_rod",
+                        "item": "minecraft:carrot_on_a_stick",
                         "nbt": "{CustomModelData:703002,display:{Name:\"{\\\"text\\\":\\\"Whip\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Use to teleport to Blinky\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}",
                         "count": {
                             "min": 1,
