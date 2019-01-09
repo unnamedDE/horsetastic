@@ -1,3 +1,7 @@
+#file: ./visuals/main
+
+/function horsetastic:visuals/blinky
+
 #file: ./visuals/summon
 
 /particle poof ~ ~ ~ 0 0 0 1 100 normal
@@ -6,4 +10,17 @@
 #file: ./visuals/tp
 
 /particle minecraft:portal ~ ~ ~ 0 0 0 10 500
-/playsound minecraft:entity.enderman.teleport player @s ~ ~ ~
+/playsound minecraft:entity.enderman.teleport player @a ~ ~ ~
+
+#file: ./visuals/tp_away
+
+/particle minecraft:portal ~ ~.5 ~ 0 0 0 1 100
+/playsound minecraft:entity.enderman.teleport neutral @a ~ ~ ~
+
+#file: ./visuals/saddle
+
+/particle minecraft:lava ~ ~ ~ 0.1 0 0.1 1 1
+
+#file: ./visuals/blinky
+
+/execute as @e[type=minecraft:skeleton_horse,tag=horsetastic_horse_blinky] at @s positioned ^ ^ ^1.2 run particle minecraft:flame ~ ~1.6 ~ 0.1 0.1 0.1 0 1 force

@@ -12,5 +12,6 @@
 
 #file: ./kill_horse
 
+/function horsetastic:visuals/tp_away
 /tp @p[distance=..1.5] ~ ~0.1 ~
 /tp @s ~ -500 ~
