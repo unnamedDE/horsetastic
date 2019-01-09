@@ -32,15 +32,10 @@
           "weight": 1,
           "functions": [
             {
-              "function": "set_count",
-              "count": 1,
-              "conditions": [
-                {
-                  "condition": "killed_by_player"
-                }
-              ]
+              "function": "set_nbt",
+              "tag": "{CustomModelData:703202,display:{Name:\"{\\\"text\\\":\\\"Eye of Blinky\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Used to craft Blinky's saddle\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\",\"{\\\"text\\\":\\\"Can also be used as an eye of ender\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
             }
-      ]
-    }
+          ]
+        }
   ]
 }

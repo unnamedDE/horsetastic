@@ -33,7 +33,7 @@
           "functions": [
             {
               "function": "set_nbt",
-              "tag": "{display:{Name:\"{\\\"text\\\":\\\"Gem of the Undead\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Drops from zombies and skeletons\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\",\"{\\\"text\\\":\\\"Used to create skeleton horse in a saddle\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+              "tag": "{CustomModelData:703201,display:{Name:\"{\\\"text\\\":\\\"Gem of the Undead\\\",\\\"color\\\":\\\"yellow\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Drops from zombies and skeletons\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\",\"{\\\"text\\\":\\\"Used to create skeleton horse in a saddle\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
             }
           ]
         }
