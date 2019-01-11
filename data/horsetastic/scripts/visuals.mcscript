@@ -24,3 +24,4 @@
 #file: ./visuals/blinky
 
 /execute as @e[type=minecraft:skeleton_horse,tag=horsetastic_horse_blinky] at @s positioned ^ ^ ^1.2 run particle minecraft:flame ~ ~1.6 ~ 0.1 0.1 0.1 0 1 force
+/execute as @e[type=minecraft:skeleton_horse,tag=horsetastic_horse_blinky] at @s run particle minecraft:enchant ~ ~1 ~ 1 1 1 1 1
