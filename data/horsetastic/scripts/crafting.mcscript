@@ -149,6 +149,7 @@ if('entity @s[tag=ac_lib_advanced_crafter_crafted_blinky_whip]' && 'block ~ ~ ~ 
 #file: ./crafting/whip/blinky/1
 
 /replaceitem block ~ ~ ~ container.16 minecraft:carrot_on_a_stick{CustomModelData:703002,display:{Name:"{\"text\":\"Whip\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Use to teleport to Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}],horsetastic:{id:"blinky_whip"}} 1
+/tag @s add ac_lib_keep_1
 /tag @s add ac_lib_advanced_crafter_crafted
 /tag @s add ac_lib_advanced_crafter_crafted_blinky_whip
 
@@ -156,7 +157,8 @@ if('entity @s[tag=ac_lib_advanced_crafter_crafted_blinky_whip]' && 'block ~ ~ ~ 
 
 /function ac_lib:advanced_crafter/crafted
 //Add replacements here
-/replaceitem block ~ ~ ~ container.2 minecraft:saddle{CustomModelData: 703103,horsetastic:{id:"blinky_saddle"},HideFlags:1,display:{Lore:["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"],Name:"{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}"},Enchantments:[{lvl:1,id:"minecraft:unbreaking"}]}
+//replaceitem block ~ ~ ~ container.2 minecraft:saddle{CustomModelData: 703103,horsetastic:{id:"blinky_saddle"},HideFlags:1,display:{Lore:["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"],Name:"{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}"},Enchantments:[{lvl:1,id:"minecraft:unbreaking"}]}
+/tag @s remove ac_lib_keep_1
 /tag @s remove ac_lib_advanced_crafter_crafted
 /tag @s remove ac_lib_advanced_crafter_crafted_blinky_whip
 
@@ -165,6 +167,7 @@ if('entity @s[tag=ac_lib_advanced_crafter_crafted_blinky_whip]' && 'block ~ ~ ~ 
 /replaceitem block ~ ~ ~ container.7 minecraft:air
 /replaceitem block ~ ~ ~ container.16 minecraft:air
 /replaceitem block ~ ~ ~ container.25 minecraft:air
+/tag @s remove ac_lib_keep_1
 /tag @s remove ac_lib_advanced_crafter_crafted
 /tag @s remove ac_lib_advanced_crafter_crafted_blinky_whip
 

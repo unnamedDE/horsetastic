@@ -7,5 +7,6 @@
 replaceitem block ~ ~ ~ container.7 minecraft:air
 replaceitem block ~ ~ ~ container.16 minecraft:air
 replaceitem block ~ ~ ~ container.25 minecraft:air
+tag @s remove ac_lib_keep_1
 tag @s remove ac_lib_advanced_crafter_crafted
 tag @s remove ac_lib_advanced_crafter_crafted_blinky_whip

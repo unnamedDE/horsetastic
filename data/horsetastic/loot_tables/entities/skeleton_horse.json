@@ -4,8 +4,8 @@
       "conditions": [
         {
           "condition": "random_chance_with_looting",
-          "chance": 0.05,
-          "looting_multiplier": 0.025
+          "chance": 0.25,
+          "looting_multiplier": 0.1
         }
       ],
       "rolls": 1,
@@ -17,7 +17,7 @@
           "functions": [
             {
               "function": "set_nbt",
-              "tag": "{display:{Name:\"{\\\"text\\\":\\\"Eye of Blinky\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Used to craft Blinky's saddle\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\",\"{\\\"text\\\":\\\"Can also be used as an eye of ender\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
+              "tag": "{unnamedDE:{id: \"blinky_eye\"}, display:{Name:\"{\\\"text\\\":\\\"Eye of Blinky\\\",\\\"color\\\":\\\"dark_purple\\\",\\\"italic\\\":\\\"false\\\"}\",Lore:[\"{\\\"text\\\":\\\"Used to craft Blinky's saddle\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\",\"{\\\"text\\\":\\\"Can also be used as an eye of ender\\\",\\\"color\\\":\\\"dark_green\\\",\\\"italic\\\":\\\"false\\\"}\"]},HideFlags:1,Enchantments:[{id:\"minecraft:unbreaking\",lvl:1}]}"
             }
           ]
         }
