@@ -7,13 +7,26 @@
 
 
 #horse
-execute as @e[type=horse,nbt={Tame:1b,Leashed:0b}] at @s if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] if entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}] positioned ~ ~0.85 ~ unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}] run function horsetastic:noai/noai
-execute as @e[type=horse,nbt={Tame:1b,Leashed:0b}] at @s unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] if entity @s[tag=horsetastic_noai] run function horsetastic:noai/ai
-execute as @e[type=horse,nbt={Tame:1b,Leashed:0b}] at @s if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}] if entity @s[tag=horsetastic_noai] run function horsetastic:noai/ai
-execute as @e[type=horse,tag=horsetastic_noai,nbt={OnGround:0b}] at @s if block ~ ~-1 ~ minecraft:air run function horsetastic:noai/ai
+execute as @e[tag=!horsetastic_noai,type=minecraft:horse,nbt={OnGround:1b,Tame:1b}] at @s unless data entity @s Leash unless entity @s[nbt={NoAI:1b}] positioned ~ ~.85 ~ if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}] run function horsetastic:noai/noai
+execute as @e[tag=horsetastic_noai,type=minecraft:horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if data entity @s Leash unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] run function horsetastic:noai/ai
+execute as @e[tag=horsetastic_noai,type=minecraft:horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}] run function horsetastic:noai/ai
 
-#skeleton_horse
-execute as @e[type=skeleton_horse,nbt={Tame:1b,Leashed:0b}] at @s if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] if entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}] positioned ~ ~0.85 ~ unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}] run function horsetastic:noai/noai
-execute as @e[type=skeleton_horse,nbt={Tame:1b,Leashed:0b}] at @s unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] if entity @s[tag=horsetastic_noai] run function horsetastic:noai/ai
-execute as @e[type=skeleton_horse,nbt={Tame:1b,Leashed:0b}] at @s if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}] if entity @s[tag=horsetastic_noai] run function horsetastic:noai/ai
-execute as @e[type=skeleton_horse,tag=horsetastic_noai] at @s if block ~ ~-1 ~ minecraft:air run function horsetastic:noai/ai
+#donkey
+execute as @e[tag=!horsetastic_noai,type=minecraft:donkey,nbt={OnGround:1b,Tame:1b}] at @s unless data entity @s Leash unless entity @s[nbt={NoAI:1b}] positioned ~ ~.85 ~ if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:donkey"}}}] run function horsetastic:noai/noai
+execute as @e[tag=horsetastic_noai,type=minecraft:donkey,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if data entity @s Leash unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] run function horsetastic:noai/ai
+execute as @e[tag=horsetastic_noai,type=minecraft:donkey,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:donkey"}}}] run function horsetastic:noai/ai
+
+#mule
+execute as @e[tag=!horsetastic_noai,type=minecraft:mule,nbt={OnGround:1b,Tame:1b}] at @s unless data entity @s Leash unless entity @s[nbt={NoAI:1b}] positioned ~ ~.85 ~ if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:mule"}}}] run function horsetastic:noai/noai
+execute as @e[tag=horsetastic_noai,type=minecraft:mule,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if data entity @s Leash unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] run function horsetastic:noai/ai
+execute as @e[tag=horsetastic_noai,type=minecraft:mule,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:mule"}}}] run function horsetastic:noai/ai
+
+#skeleton horse
+execute as @e[tag=!horsetastic_noai,type=minecraft:skeleton_horse,nbt={OnGround:1b,Tame:1b}] at @s unless data entity @s Leash unless entity @s[nbt={NoAI:1b}] positioned ~ ~.85 ~ if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}] run function horsetastic:noai/noai
+execute as @e[tag=horsetastic_noai,type=minecraft:skeleton_horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if data entity @s Leash unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] run function horsetastic:noai/ai
+execute as @e[tag=horsetastic_noai,type=minecraft:skeleton_horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}] run function horsetastic:noai/ai
+
+#zombie horse
+execute as @e[tag=!horsetastic_noai,type=minecraft:zombie_horse,nbt={OnGround:1b,Tame:1b}] at @s unless data entity @s Leash unless entity @s[nbt={NoAI:1b}] positioned ~ ~.85 ~ if entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] unless entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:zombie_horse"}}}] run function horsetastic:noai/noai
+execute as @e[tag=horsetastic_noai,type=minecraft:zombie_horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if data entity @s Leash unless entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}] run function horsetastic:noai/ai
+execute as @e[tag=horsetastic_noai,type=minecraft:zombie_horse,nbt={Tame:1b}] at @s positioned ~ ~.85 ~ if entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:zombie_horse"}}}] run function horsetastic:noai/ai

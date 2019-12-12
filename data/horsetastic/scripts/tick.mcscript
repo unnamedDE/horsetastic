@@ -3,6 +3,12 @@
 // here goes your main content
 // executes 20 times a second
 
+#unnamedDE's Lib
+/execute unless score horsetastic installed_packs matches 1 run scoreboard players set horsetastic installed_packs 1
+asat(@a) {
+  /function horsetastic:creative_menu/give
+}
+
 /function horsetastic:mark_ground_saddles/main
 /function horsetastic:summon_horse_auto/main
 /function horsetastic:replace_saddles/main

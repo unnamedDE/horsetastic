@@ -2,55 +2,61 @@
 
 ##
 #horse
-asat('@e[type=horse,nbt={Tame:1b,Leashed:0b}]') {
-  if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]') {
-    if('entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}]') {
-      positioned('~ ~0.85 ~') {
-        if(!'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
-          /function horsetastic:noai/noai
-        }
-      }
-    }
-  } else {
-    if('entity @s[tag=horsetastic_noai]') {
-      /function horsetastic:noai/ai
-    }
-  }
-  if('entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
-    if('entity @s[tag=horsetastic_noai]') {
-      /function horsetastic:noai/ai
-    }
+asat(@e[tag=!horsetastic_noai,type=minecraft:horse,nbt={OnGround:1b,Tame:1b}]), if(!'data entity @s Leash' && !'entity @s[nbt={NoAI:1b}]') {
+  positioned('~ ~.85 ~'), if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' && !'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
+    /function horsetastic:noai/noai
   }
 }
-asat(@e[type=horse,tag=horsetastic_noai,nbt={OnGround:0b}]) {
-  if('block ~ ~-1 ~ minecraft:air') {
+asat(@e[tag=horsetastic_noai,type=minecraft:horse,nbt={Tame:1b}]) {
+  positioned('~ ~.85 ~'), if('data entity @s Leash' || !'entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' || 'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:horse"}}}]') {
     /function horsetastic:noai/ai
   }
 }
 #
-#skeleton_horse
-asat('@e[type=skeleton_horse,nbt={Tame:1b,Leashed:0b}]') {
-  if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]') {
-    if('entity @s[tag=!horsetastic_noai,nbt={OnGround:1b}]') {
-      positioned('~ ~0.85 ~') {
-        if(!'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
-          /function horsetastic:noai/noai
-        }
-      }
-    }
-  } else {
-    if('entity @s[tag=horsetastic_noai]') {
-      /function horsetastic:noai/ai
-    }
-  }
-  if('entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
-    if('entity @s[tag=horsetastic_noai]') {
-      /function horsetastic:noai/ai
-    }
+#donkey
+asat(@e[tag=!horsetastic_noai,type=minecraft:donkey,nbt={OnGround:1b,Tame:1b}]), if(!'data entity @s Leash' && !'entity @s[nbt={NoAI:1b}]') {
+  positioned('~ ~.85 ~'), if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' && !'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:donkey"}}}]') {
+    /function horsetastic:noai/noai
   }
 }
-asat(@e[type=skeleton_horse,tag=horsetastic_noai]) {
-  if('block ~ ~-1 ~ minecraft:air') {
+asat(@e[tag=horsetastic_noai,type=minecraft:donkey,nbt={Tame:1b}]) {
+  positioned('~ ~.85 ~'), if('data entity @s Leash' || !'entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' || 'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:donkey"}}}]') {
+    /function horsetastic:noai/ai
+  }
+}
+#
+#mule
+asat(@e[tag=!horsetastic_noai,type=minecraft:mule,nbt={OnGround:1b,Tame:1b}]), if(!'data entity @s Leash' && !'entity @s[nbt={NoAI:1b}]') {
+  positioned('~ ~.85 ~'), if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' && !'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:mule"}}}]') {
+    /function horsetastic:noai/noai
+  }
+}
+asat(@e[tag=horsetastic_noai,type=minecraft:mule,nbt={Tame:1b}]) {
+  positioned('~ ~.85 ~'), if('data entity @s Leash' || !'entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' || 'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:mule"}}}]') {
+    /function horsetastic:noai/ai
+  }
+}
+#
+#skeleton horse
+asat(@e[tag=!horsetastic_noai,type=minecraft:skeleton_horse,nbt={OnGround:1b,Tame:1b}]), if(!'data entity @s Leash' && !'entity @s[nbt={NoAI:1b}]') {
+  positioned('~ ~.85 ~'), if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' && !'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
+    /function horsetastic:noai/noai
+  }
+}
+asat(@e[tag=horsetastic_noai,type=minecraft:skeleton_horse,nbt={Tame:1b}]) {
+  positioned('~ ~.85 ~'), if('data entity @s Leash' || !'entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' || 'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:skeleton_horse"}}}]') {
+    /function horsetastic:noai/ai
+  }
+}
+#
+#zombie horse
+asat(@e[tag=!horsetastic_noai,type=minecraft:zombie_horse,nbt={OnGround:1b,Tame:1b}]), if(!'data entity @s Leash' && !'entity @s[nbt={NoAI:1b}]') {
+  positioned('~ ~.85 ~'), if('entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' && !'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:zombie_horse"}}}]') {
+    /function horsetastic:noai/noai
+  }
+}
+asat(@e[tag=horsetastic_noai,type=minecraft:zombie_horse,nbt={Tame:1b}]) {
+  positioned('~ ~.85 ~'), if('data entity @s Leash' || !'entity @s[nbt={SaddleItem:{id:"minecraft:saddle"}}]' || 'entity @p[distance=..1,nbt={RootVehicle:{Entity:{id:"minecraft:zombie_horse"}}}]') {
     /function horsetastic:noai/ai
   }
 }
@@ -62,6 +68,5 @@ asat(@e[type=skeleton_horse,tag=horsetastic_noai]) {
 
 #file: ./noai/noai
 
-
-  /data merge entity @s[tag=!horsetastic_noai] {NoAI:1b}
-  /tag @s add horsetastic_noai
+/data merge entity @s[tag=!horsetastic_noai] {NoAI:1b}
+/tag @s add horsetastic_noai

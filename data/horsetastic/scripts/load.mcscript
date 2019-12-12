@@ -6,3 +6,4 @@
 /scoreboard objectives add saddle_og dummy "Saddle Ground Time"
 /scoreboard objectives add saddle_type dummy "Saddle Type"
 /scoreboard objectives add horse_whip_used minecraft.used:minecraft.carrot_on_a_stick "Whip used"
+/scoreboard objectives add ht_creative_menu dummy "Creative Menu"

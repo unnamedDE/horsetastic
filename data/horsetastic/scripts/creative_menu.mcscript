@@ -1,0 +1,50 @@
+#file: ./creative_menu/select
+
+/tellraw @s [{"text":" ► ","color":"green"},{"text":"Horsetastic","hoverEvent":{"action":"show_text","value":"Click to select"},"clickEvent":{"action":"run_command","value":"/function horsetastic:creative_menu/menu"}}]
+
+#file: ./creative_menu/menu
+
+/tellraw @s {"text":""}
+/tellraw @s {"text":""}
+/tellraw @s [{"text":"<===== ","color":"aqua"},{"text":"Horsetastic","color":"red"},{"text":" =====>","color":"aqua"}]
+/tellraw @s {"text":""}
+
+#Horse in a saddle
+/tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 11"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Horse in a saddle"}]
+#Skeleton Horse in a saddle
+/tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 12"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Skeleton Horse in a saddle"}]
+#Blinky's saddle
+/tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 13"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Blinky's saddle"}]
+#Whip
+/tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 14"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Whip"}]
+#Whip (Blinky)
+/tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 15"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Whip (Blinky)"}]
+
+
+/tellraw @s {"text":""}
+/tellraw @s [{"text":" ↑ ","color":"red"},{"text":"Return to main menu","hoverEvent":{"action":"show_text","value":"Click to return"},"clickEvent":{"action":"run_command","value":"/function unnamedde:creative_menu"}}]
+/tellraw @s {"text":""}
+/tellraw @s {"text":""}
+
+#file: ./creative_menu/give
+
+if('score @s ht_creative_menu matches 11') {
+  /give @s minecraft:saddle{horsetastic:{id:"basic_saddle"},CustomModelData:703101,display:{Name:"{\"text\":\"Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop it on the ground to summon a horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]} 1
+  /scoreboard players reset @s ht_creative_menu
+}
+if('score @s ht_creative_menu matches 12') {
+  /give @s minecraft:saddle{horsetastic:{id:"skeleton_saddle"},CustomModelData:703102,display:{Name:"{\"text\":\"Skeleton Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop to summon a skeleton horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}
+  /scoreboard players reset @s ht_creative_menu
+}
+if('score @s ht_creative_menu matches 13') {
+  /give @p minecraft:saddle{horsetastic:{id:"blinky_saddle"},CustomModelData:703103,display:{Name:"{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]} 1
+  /scoreboard players reset @s ht_creative_menu
+}
+if('score @s ht_creative_menu matches 14') {
+  /give @s minecraft:carrot_on_a_stick{horsetastic:{id:"basic_whip"},CustomModelData:703001,display:{Lore:["{\"text\":\"Use to boost nearby horses\",\"color\":\"dark_green\",\"italic\":\"false\"}"],Name:"{\"text\":\"Whip\",\"color\":\"yellow\",\"italic\":\"false\"}"}} 1
+  /scoreboard players reset @s ht_creative_menu
+}
+if('score @s ht_creative_menu matches 15') {
+  /give @s minecraft:carrot_on_a_stick{horsetastic:{id:"blinky_whip"},CustomModelData:703002,display:{Name:"{\"text\":\"Whip\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Use to teleport to Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]} 1
+  /scoreboard players reset @s ht_creative_menu
+}

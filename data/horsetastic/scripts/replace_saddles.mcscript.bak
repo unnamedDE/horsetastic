@@ -1,0 +1,49 @@
+#file: ./replace_saddles/main
+
+#basic
+/execute as @a[nbt={Inventory: [{id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"basic_saddle_"}}}]}] at @s run function horsetastic:replace_saddles/player/basic
+/execute as @e[type=minecraft:item,nbt={Item: {id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"basic_saddle_"}}}}] at @s run function horsetastic:replace_saddles/ground/basic
+#
+#skeleton
+/execute as @a[nbt={Inventory: [{id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"skeleton_saddle_"}}}]}] at @s run function horsetastic:replace_saddles/player/skeleton
+/execute as @e[type=minecraft:item,nbt={Item: {id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"skeleton_saddle_"}}}}] at @s run function horsetastic:replace_saddles/ground/skeleton
+#
+#blinky
+/execute as @a[nbt={Inventory: [{id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"blinky_saddle_"}}}]}] at @s run function horsetastic:replace_saddles/player/blinky
+/execute as @e[type=minecraft:item,nbt={Item: {id: "minecraft:saddle", Count: 1b, tag: {horsetastic:{id:"blinky_saddle_"}}}}] at @s run function horsetastic:replace_saddles/ground/blinky
+
+#file: ./replace_saddles/player/basic
+
+/give @s minecraft:wooden_sword{Placeholder:1} 36
+/kill @e[type=item,nbt={Item:{id:"minecraft:wooden_sword",tag:{Placeholder:1}}}]
+/clear @s minecraft:saddle{horsetastic:{id:"basic_saddle_"}} 1
+/function horsetastic:give_saddle/basic
+/clear @s minecraft:wooden_sword{Placeholder:1} 36
+
+#file: ./replace_saddles/player/skeleton
+
+/give @s minecraft:wooden_sword{Placeholder:1} 36
+/kill @e[type=item,nbt={Item:{id:"minecraft:wooden_sword",tag:{Placeholder:1}}}]
+/clear @s minecraft:saddle{horsetastic:{id:"skeleton_saddle_"}} 1
+/function horsetastic:give_saddle/skeleton
+/clear @s minecraft:wooden_sword{Placeholder:1} 36
+
+#file: ./replace_saddles/player/blinky
+
+/give @s minecraft:wooden_sword{Placeholder:1} 36
+/kill @e[type=item,nbt={Item:{id:"minecraft:wooden_sword",tag:{Placeholder:1}}}]
+/clear @s minecraft:saddle{horsetastic:{id:"blinky_saddle_"}} 1
+/function horsetastic:give_saddle/blinky
+/clear @s minecraft:wooden_sword{Placeholder:1} 36
+
+#file: ./replace_saddles/ground/basic
+
+/data merge entity @s[type=minecraft:item] {Item:{id:"minecraft:saddle",Count:1b,tag:{horsetastic:{id:"basic_saddle"},CustomModelData:703101,display:{Name:"{\"text\":\"Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop it on the ground to summon a horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}
+
+#file: ./replace_saddles/ground/skeleton
+
+/data merge entity @s[type=minecraft:item] {Item:{id:"minecraft:saddle",Count:1b,tag:{horsetastic:{id:"skeleton_saddle"},CustomModelData:703102,display:{Name:"{\"text\":\"Skeleton Horse in a saddle\",\"color\":\"yellow\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop to summon a skeleton horse\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}
+
+#file: ./replace_saddles/ground/blinky
+
+/data merge entity @s[type=minecraft:item] {Item:{id:"minecraft:saddle",Count:1b,tag:{horsetastic:{id:"blinky_saddle"},CustomModelData:703103,display:{Name:"{\"text\":\"Blinky's saddle\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Drop to summon Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]}}}

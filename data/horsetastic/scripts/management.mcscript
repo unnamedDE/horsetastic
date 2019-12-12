@@ -1,0 +1,12 @@
+#file: ./uninstall
+
+/scoreboard objectives remove saddle_og
+/scoreboard objectives remove saddle_type
+/scoreboard objectives remove horse_whip_used
+/scoreboard objectives remove ht_creative_menu
+
+/execute if score datapack_list datapack_list matches 1.. run scoreboard players reset horsetastic datapack_list
+
+#file: ./datapack_list_init
+
+/execute if score datapack_list datapack_list matches 1.. run scoreboard players set horsetastic datapack_list 1

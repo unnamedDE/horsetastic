@@ -1,0 +1,7 @@
+#file: ./loot/undead
+
+/loot spawn ~ ~ ~ loot horsetastic:entities/undead
+
+#file: ./loot/skeleton_horse
+
+/loot spawn ~ ~ ~ loot horsetastic:entities/skeleton_horse

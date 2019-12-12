@@ -1,7 +1,0 @@
-#file: ./give_whips/basic
-
-/give @s minecraft:carrot_on_a_stick{CustomModelData:703001,display:{Lore:["{\"text\":\"Use to boost nearby horses\",\"color\":\"dark_green\",\"italic\":\"false\"}"],Name:"{\"text\":\"Whip\",\"color\":\"yellow\",\"italic\":\"false\"}"}} 1
-
-#file: ./give_whips/blinky
-
-/give @s minecraft:carrot_on_a_stick{CustomModelData:703002,display:{Name:"{\"text\":\"Whip\",\"color\":\"dark_purple\",\"italic\":\"false\"}",Lore:["{\"text\":\"Use to teleport to Blinky\",\"color\":\"dark_green\",\"italic\":\"false\"}"]},HideFlags:1,Enchantments:[{id:"minecraft:unbreaking",lvl:1}]} 1
