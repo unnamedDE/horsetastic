@@ -19,6 +19,6 @@ tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":
 #Whip (Blinky)
 tellraw @s [{"text":"► ["},{"text":"1","color":"green","clickEvent":{"action":"run_command","value":"/scoreboard players set @s ht_creative_menu 15"}},{"text":"]      ","color":"reset"},{"text":" ","color":"reset"},{"text":"Whip (Blinky)"}]
 tellraw @s {"text":""}
-tellraw @s [{"text":" ↑ ","color":"red"},{"text":"Return to main menu","hoverEvent":{"action":"show_text","value":"Click to return"},"clickEvent":{"action":"run_command","value":"/function unnamedde:creative_menu"}}]
+tellraw @s [{"text":" ↑ ","color":"red"},{"text":"Return to main menu","hoverEvent":{"action":"show_text","value":"Click to return"},"clickEvent":{"action":"run_command","value":"/function unnamed-core:creative_menu"}}]
 tellraw @s {"text":""}
 tellraw @s {"text":""}
